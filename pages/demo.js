@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { getGPTResponse } from "../lib/gpt";
-import { speakText } from "../lib/voice";
 import UpgradeBox from "../components/UpgradeBox";
 
 export default function Demo() {
+  console.log("GPT-Demo wurde geladen");
   const [task, setTask] = useState("");
   const [response, setResponse] = useState("");
 
@@ -11,7 +11,6 @@ export default function Demo() {
     setTask(prompt);
     const result = await getGPTResponse(prompt);
     setResponse(result);
-    speakText(result);
   };
 
   return (
