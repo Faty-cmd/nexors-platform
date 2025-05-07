@@ -1,5 +1,5 @@
 {
-  "name": "nexors-platform-all-in",
+  "name": "nexors-platform",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
