@@ -3,13 +3,18 @@ import { getGPTResponse } from "../lib/gpt";
 
 export default function Demo() {
   const [task, setTask] = useState("");
-  const [response, setResponse] = useState("...");
+  const [response, setResponse] = useState("Bereit");
 
   const handleTask = async (prompt) => {
     setTask(prompt);
-    setResponse("Lädt...");
-    const result = await getGPTResponse(prompt);
-    setResponse(result);
+    setResponse("Antwort wird geladen...");
+    try {
+      const result = await getGPTResponse(prompt);
+      setResponse(result);
+    } catch (e) {
+      setResponse("Fehler beim Abrufen der Antwort.");
+      console.error("Fehler:", e);
+    }
   };
 
   return (
