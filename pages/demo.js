@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { getGPTResponse } from "../lib/gpt";
 import UpgradeBox from "../components/UpgradeBox";
+import { trackCoreEvent } from "../lib/core";
 
 export default function Demo() {
-  const [task, setTask] = useState("");
   const [response, setResponse] = useState("");
 
   const handleTask = async (prompt) => {
+    trackCoreEvent("task_clicked", prompt);
     const result = await getGPTResponse(prompt);
     setResponse(result);
+    trackCoreEvent("response_received", result);
   };
 
   return (
