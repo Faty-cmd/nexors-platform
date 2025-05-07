@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { getGPTResponse } from "../lib/gpt";
-import UpgradeBox from "../components/UpgradeBox";
 
 export default function Demo() {
-  console.log("GPT-Demo wurde geladen");
   const [task, setTask] = useState("");
   const [response, setResponse] = useState("");
 
@@ -20,7 +18,6 @@ export default function Demo() {
       <button onClick={() => handleTask("10 Produktivitätstipps")}>Produktivitätstipps</button>
       <button onClick={() => handleTask("Analysiere einen Bericht")}>Bericht analysieren</button>
       <p><strong>Antwort:</strong> {response}</p>
-      <UpgradeBox />
     </main>
   );
 }
