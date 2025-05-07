@@ -1,0 +1,8 @@
+{
+  "name": "NEXORS",
+  "short_name": "NEXORS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "description": "Super-KI-Plattform mit Stimme, GPT, PDF & CORE"
+}
