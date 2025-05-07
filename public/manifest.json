@@ -4,5 +4,6 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "description": "Die Super-KI Plattform für GPT, Stimme, Add-ons und Business"
+  "theme_color": "#000000",
+  "description": "NEXORS Super-KI-Plattform mit GPT, CORE, Stimme & App"
 }
