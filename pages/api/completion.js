@@ -14,5 +14,10 @@ export default async function handler(req, res) {
   });
 
   const data = await response.json();
+
+  if (!data.choices || !data.choices[0] || !data.choices[0].message?.content) {
+    return res.status(500).json({ error: "Fehler: Keine gültige GPT-Antwort." });
+  }
+
   res.status(200).json(data);
 }
