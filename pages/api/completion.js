@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const prompt = "Sag mir einen witzigen Satz über KI.";
+  const prompt = "Sag mir einen witzigen Satz über künstliche Intelligenz.";
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -15,20 +15,13 @@ export default async function handler(req, res) {
     });
 
     const raw = await response.text();
-    console.log("RAW:", raw);
+    console.log("RAW ANTWORT:", raw);
 
     const data = JSON.parse(raw);
 
-    if (
-      !data.choices ||
-      !data.choices[0] ||
-      !data.choices[0].message ||
-      !data.choices[0].message.content
-    ) {
-      return res.status(500).json({ error: "Fehler: Keine gültige GPT-Antwort." });
-    }
+    const antwort = data?.choices?.[0]?.message?.content || "GPT hat nichts geantwortet.";
 
-    return res.status(200).json(data);
+    return res.status(200).json({ result: antwort });
   } catch (error) {
     console.error("API-Fehler:", error);
     return res.status(500).json({ error: "Interner Fehler bei der Verarbeitung." });
