@@ -14,7 +14,11 @@ export default async function handler(req, res) {
 })
     });
 
-    const data = await response.json();
+    const raw = await response.text();
+console.log("ROUTER ROH:", raw);
+const data = JSON.parse(raw);
+
+
 
     if (
       !data.choices ||
