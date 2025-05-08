@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer sk-or-xxxxxxxxxxxxxxxxxxxx", // DEIN KEY HIER
+        Authorization: "Bearer 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", 
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
