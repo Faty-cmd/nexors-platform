@@ -10,12 +10,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "mistralai/mixtral-8x7b",
-        messages: [
-          {
-            role: "user",
-            content: prompt
-          }
-        ]
+        messages: [{ role: "user", content: prompt }]
       })
     });
 
