@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": Bearer ${process.env.OPENROUTER_API_KEY},
+        Authorization: Bearer ${process.env.OPENROUTER_API_KEY},
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -29,3 +29,10 @@ export default async function handler(req, res) {
     ) {
       return res.status(500).json({ error: "Fehler: Keine gültige GPT-Antwort." });
     }
+
+    return res.status(200).json(data);
+  } catch (error) {
+    console.error("API-Fehler:", error);
+    return res.status(500).json({ error: "Interner Fehler bei der Verarbeitung." });
+  }
+}
