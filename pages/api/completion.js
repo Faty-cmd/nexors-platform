@@ -9,9 +9,9 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: model: "openai/gpt-3.5-turbo",
-        messages: [{ role: "user", content: prompt }]
-      })
+  model: "openai/gpt-3.5-turbo",
+  messages: [{ role: "user", content: prompt }]
+})
     });
 
     const data = await response.json();
