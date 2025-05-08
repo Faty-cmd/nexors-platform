@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "mistralai/mixtral-8x7b",
+        model: model: "openai/gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }]
       })
     });
