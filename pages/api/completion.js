@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: "openchat/openchat-3.5",
+      model: "mistralai/mixtral-8x7b",
       messages: [{ role: "user", content: prompt }]
     })
   });
