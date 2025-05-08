@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer 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", 
+        Authorization: "Bearer ", 
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
