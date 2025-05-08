@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const prompt = req.body.prompt;
+  const prompt = "Sag mir einen witzigen Satz über KI.";
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -9,16 +9,15 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-  model: "openai/gpt-3.5-turbo",
-  messages: [{ role: "user", content: prompt }]
-})
+        model: "openai/gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }]
+      })
     });
 
     const raw = await response.text();
-console.log("ROUTER ROH:", raw);
-const data = JSON.parse(raw);
+    console.log("RAW:", raw);
 
-
+    const data = JSON.parse(raw);
 
     if (
       !data.choices ||
