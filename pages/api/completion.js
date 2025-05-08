@@ -9,7 +9,8 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "openrouter/openai/gpt-3.5-turbo",
+        model: "openrouter/mistralai/mixtral-8x7b",
+
         messages: [{ role: "user", content: prompt }]
       })
     });
