@@ -9,13 +9,13 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "openai/gpt-3.5-turbo",
+        model: "openrouter/openai/gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }]
       })
     });
 
     const raw = await response.text();
-    console.log("RAW ANTWORT:", raw);
+    console.log("RAW:", raw);
 
     const data = JSON.parse(raw);
     const antwort = data?.choices?.[0]?.message?.content || "GPT hat nichts geantwortet.";
