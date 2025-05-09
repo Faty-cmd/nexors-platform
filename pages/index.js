@@ -1,3 +1,5 @@
+console.log("✅ index.js wurde geladen");
+
 import Header from "../components/Header";
 import TaskDemo from "../components/TaskDemo";
 import UpgradeBox from "../components/UpgradeBox";
